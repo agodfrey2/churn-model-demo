@@ -81,6 +81,8 @@ if predict:
     probability = model.predict_proba(input_df)[0][1]
     risk = "Low" if probability >= 0.6 else "Medium" if probability >= 0.4 else "High"
 
+    st.divider()
+    
     st.metric("Renewal Probability", f"{probability:.1%}")
     st.caption(f"Predicted renewal Likelihood: {probability:.1%}")
 
