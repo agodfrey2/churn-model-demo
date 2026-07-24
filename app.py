@@ -43,7 +43,7 @@ with col2:
 button_col1, button_col2, button_col3 = st.columns([1,1,1])
 
 with button_col2:
-    predict = st.button("Predict")
+    predict = st.button("🔍Predict Renewal")
 
 if predict:
 
