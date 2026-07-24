@@ -40,7 +40,12 @@ with col2:
     sessions_per_active_day = st.number_input("Sessions per Active Day", min_value=0.0, value=5.0)
     days_since_last_activity = st.number_input("Days Since Last Activity", min_value=0, value=30)
 
-if st.button("Predict"):
+buttom_col1, button_col2, button_col2 = st.columns([1,1,1])
+
+with button_col2:
+    predict = st.button("Predict")
+
+if predict:
 
     # Build categorical DataFrame — column names must match encoder exactly
     raw = pd.DataFrame([{
