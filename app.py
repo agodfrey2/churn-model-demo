@@ -84,7 +84,7 @@ if predict:
     st.metric("Renewal Probability", f"{probability:.1%}")
     st.caption(f"Predicted renewal Likelihood: {probability:.1%}")
 
-    st.progress(into(probability*100))
+    st.progress(int(probability*100))
     
     if risk == "High":
         st.error(f"🚨Churn Risk: {risk}")
