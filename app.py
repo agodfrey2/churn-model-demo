@@ -70,11 +70,16 @@ if st.button("Predict"):
     risk = "Low" if probability >= 0.6 else "Medium" if probability >= 0.4 else "High"
 
     st.metric("Renewal Probability", f"{probability:.1%}")
-    if risk == "High":
-        st.error(f"Churn Risk: {risk}")
-    elif risk == "Medium":
-        st.warning(f"Churn Risk: {risk}")
-    else:
-        st.success(f"Churn Risk: {risk}")
 
-st.progress(float(probability))
+    st.progress(probability)
+    
+    if risk == "High":
+        st.error(f"🚨Churn Risk: {risk}")
+    elif risk == "Medium":
+        st.warning(f"⚠️Churn Risk: {risk}")
+    else:
+        st.success(f"✅Churn Risk: {risk}")
+
+
+
+
