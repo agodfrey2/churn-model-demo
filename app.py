@@ -25,7 +25,7 @@ with col1:
     st.subheader("Customer Information")
     age  = st.number_input("Age", min_value=18, max_value=100, value=35)
     income_level = st.radio("Income Level",  ["Low", "Medium", "High", "Very High"])
-    education = st.radio("Education",     ["Graduate", "High School", "Other", "Post-Graduate"])
+    education = st.radio("Education",     ["High School", "Graduate","Post-Graduate", "Other"])
     device_type = st.radio("Device Type",   ["Desktop-only", "Mobile-only", "Multi-device"])
     tech_comfort_score = st.slider("Tech Comfort Score", min_value=1, max_value=5, value=5)
 
