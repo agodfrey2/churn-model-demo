@@ -27,7 +27,7 @@ with col1:
     income_level = st.radio("Income Level",  ["Low", "Medium", "High", "Very High"])
     education = st.radio("Education",     ["Graduate", "High School", "Other", "Post-Graduate"])
     device_type = st.radio("Device Type",   ["Desktop-only", "Mobile-only", "Multi-device"])
-    tech_comfort_score = st.slider("Tech Comfort Score", min_value=1, max_value=10, value=5)
+    tech_comfort_score = st.slider("Tech Comfort Score", min_value=1, max_value=5, value=5)
 
 with col2: 
     st.subheader("Activity Metrics")
