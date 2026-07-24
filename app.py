@@ -71,7 +71,7 @@ if st.button("Predict"):
 
     st.metric("Renewal Probability", f"{probability:.1%}")
 
-    st.progress(probability)
+    st.progress(float(probability))
     
     if risk == "High":
         st.error(f"🚨Churn Risk: {risk}")
