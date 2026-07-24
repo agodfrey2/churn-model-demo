@@ -16,7 +16,8 @@ model, encoder = load_artifacts()
 
 # ── UI ────────────────────────────────────────────────────────────────────────
 
-st.title("Customer Renewal Probability Predictor")
+st.title("🥗 Healthy Meals Renewal Predictor")
+st.caption("Predict the likelihood that a Healthy Meals subscriber will renew their subscription.")
 st.write("Enter customer attributes to predict the likelihood of subscription renewal.")
 
 age  = st.number_input("Age", min_value=18, max_value=100, value=35)
