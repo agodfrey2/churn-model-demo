@@ -76,3 +76,5 @@ if st.button("Predict"):
         st.warning(f"Churn Risk: {risk}")
     else:
         st.success(f"Churn Risk: {risk}")
+
+st.progress(float(probability))
