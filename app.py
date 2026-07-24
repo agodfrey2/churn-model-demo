@@ -23,62 +23,15 @@ age               = st.number_input("Age", min_value=18, max_value=100, value=35
 income_level      = st.radio("Income Level",  ["Low", "Medium", "High", "Very High"])
 education         = st.radio("Education",     ["Graduate", "High School", "Other", "Post-Graduate"])
 device_type       = st.radio("Device Type",   ["Desktop-only", "Mobile-only", "Multi-device"])
-total_sessions = st.number_input(
-    "Total Sessions",
-    min_value=0,
-    value=50
-)
-
-tech_comfort_score = st.slider(
-    "Tech Comfort Score",
-    min_value=1,
-    max_value=10,
-    value=5
-)
-
-gross_session_length = st.number_input(
-    "Gross Session Length",
-    min_value=0.0,
-    value=1000.0
-)
-
-active_days = st.number_input(
-    "Active Days",
-    min_value=0,
-    value=10
-)
-
-active_quarters = st.number_input(
-    "Active Quarters",
-    min_value=0,
-    value=2
-)
-
-avg_sessions_per_active_quarter = st.number_input(
-    "Avg Sessions per Active Quarter",
-    min_value=0.0,
-    value=25.0
-)
-
-avg_session_length = st.number_input(
-    "Avg Session Length",
-    min_value=0.0,
-    value=30.0
-)
-
-sessions_per_active_day = st.number_input(
-    "Sessions per Active Day",
-    min_value=0.0,
-    value=5.0
-)
-
-days_since_last_activity = st.number_input(
-    "Days Since Last Activity",
-    min_value=0,
-    value=30
-)
-
-
+total_sessions = st.number_input("Total Sessions", min_value=0, value=50)
+tech_comfort_score = st.slider("Tech Comfort Score", min_value=1, max_value=10, value=5)
+gross_session_length = st.number_input("Gross Session Length",min_value=0.0,value=1000.0)
+active_days = st.number_input("Active Days", min_value=0, value=10)
+active_quarters = st.number_input("Active Quarters", min_value=0, value=2)
+avg_sessions_per_active_quarter = st.number_input("Avg Sessions per Active Quarter", min_value=0.0,value=25.0)
+avg_session_length = st.number_input("Avg Session Length", min_value=0.0, value=30.0)
+sessions_per_active_day = st.number_input("Sessions per Active Day", min_value=0.0, value=5.0)
+days_since_last_activity = st.number_input("Days Since Last Activity", min_value=0, value=30)
 
 if st.button("Predict"):
 
@@ -116,7 +69,7 @@ if st.button("Predict"):
     probability = model.predict_proba(input_df)[0][1]
     risk = "Low" if probability >= 0.6 else "Medium" if probability >= 0.4 else "High"
 
-    st.metric("Renewal Probability", f"{probability:.2f}")
+    st.metric("Renewal Probability", f"{probability:.1%}")
     if risk == "High":
         st.error(f"Churn Risk: {risk}")
     elif risk == "Medium":
