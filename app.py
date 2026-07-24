@@ -35,9 +35,9 @@ with col2:
     gross_session_length = st.number_input("Gross Session Length (Minutes)",min_value=0,value=1000, step=1)
     active_days = st.number_input("Active Days", min_value=0, value=10)
     active_quarters = st.number_input("Active Quarters", min_value=0, value=2)
-    avg_sessions_per_active_quarter = st.number_input("Avg Sessions per Active Quarter", min_value=0.0,value=25.0)
+    avg_sessions_per_active_quarter = st.number_input("Avg Sessions per Active Quarter", min_value=0,value=25)
     avg_session_length = st.number_input("Avg Session Length", min_value=0, value=30)
-    sessions_per_active_day = st.number_input("Sessions per Active Day", min_value=0.0, value=5.0)
+    sessions_per_active_day = st.number_input("Sessions per Active Day", min_value=0, value=5)
     days_since_last_activity = st.number_input("Days Since Last Activity", min_value=0, value=30)
 
 button_col1, button_col2, button_col3 = st.columns([1,1,1])
