@@ -29,7 +29,7 @@ total_sessions = st.number_input(
     value=50
 )
 
-tech_comfort_score = st.number_input(
+tech_comfort_score = st.slider(
     "Tech Comfort Score",
     min_value=1,
     max_value=10,
@@ -110,7 +110,7 @@ if st.button("Predict"):
     input_df = pd.concat([numeric_df, encoded_df], axis=1)
     
     #Debug
-    st.write(input_df.columns.tolist())
+    #st.write(input_df.columns.tolist())
 
     # Column 1 = P(renewed), column 0 = P(churned)
     probability = model.predict_proba(input_df)[0][1]
