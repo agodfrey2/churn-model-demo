@@ -20,7 +20,7 @@ st.title("🥗 Healthy Meals Renewal Predictor")
 st.caption("Predict the likelihood that a Healthy Meals subscriber will renew their subscription.")
 st.write("Enter customer attributes to predict the likelihood of subscription renewal.")
 
-col1, col2 = st.columns(2)
+col1, col2, col3 = st.columns([1,1,1)
 with col1: 
     st.subheader("Customer Information")
     age  = st.number_input("Age", min_value=18, max_value=100, value=35)
@@ -29,7 +29,10 @@ with col1:
     device_type = st.radio("Device Type",   ["Desktop-only", "Mobile-only", "Multi-device"])
     tech_comfort_score = st.slider("Tech Comfort Score", min_value=1, max_value=10, value=5)
 
-with col2: 
+with col2:
+    predict = st.button("Predict")
+
+with col3: 
     st.subheader("Activity Metrics")
     total_sessions = st.number_input("Total Sessions", min_value=0, value=50)
     gross_session_length = st.number_input("Gross Session Length",min_value=0.0,value=1000.0)
