@@ -40,7 +40,7 @@ with col2:
     sessions_per_active_day = st.number_input("Sessions per Active Day", min_value=0.0, value=5.0)
     days_since_last_activity = st.number_input("Days Since Last Activity", min_value=0, value=30)
 
-buttom_col1, button_col2, button_col2 = st.columns([1,1,1])
+button_col1, button_col2, button_col3 = st.columns([1,1,1])
 
 with button_col2:
     predict = st.button("Predict")
@@ -82,8 +82,9 @@ if predict:
     risk = "Low" if probability >= 0.6 else "Medium" if probability >= 0.4 else "High"
 
     st.metric("Renewal Probability", f"{probability:.1%}")
+    st.caption(f"Predicted renewal Likelihood: {probability:.1%}")
 
-    st.progress(float(probability))
+    st.progress(into(probability*100))
     
     if risk == "High":
         st.error(f"🚨Churn Risk: {risk}")
