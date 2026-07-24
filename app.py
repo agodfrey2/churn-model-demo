@@ -32,7 +32,7 @@ with col1:
 with col2: 
     st.subheader("Activity Metrics")
     total_sessions = st.number_input("Total Sessions", min_value=0, value=50)
-    gross_session_length = st.number_input("Gross Session Length (Minutes)",min_value=0.0,value=1000.0, step=1)
+    gross_session_length = st.number_input("Gross Session Length (Minutes)",min_value=0.0,value=1000, step=1)
     active_days = st.number_input("Active Days", min_value=0, value=10)
     active_quarters = st.number_input("Active Quarters", min_value=0, value=2)
     avg_sessions_per_active_quarter = st.number_input("Avg Sessions per Active Quarter", min_value=0.0,value=25.0)
