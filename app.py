@@ -95,6 +95,9 @@ if predict:
     else:
         st.success(f"✅Churn Risk: {risk}")
 
+st.markdown("---")
+st.caption("Built with Streamlit and XGBoost using Healthy Meals Subscription Data."
+
 
 
 
